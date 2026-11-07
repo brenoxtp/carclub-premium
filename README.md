@@ -39,3 +39,13 @@ npm run preview
 ## Publicação
 
 Pode ser publicado em serviços de hospedagem estática com `npm run build` e saída `dist` (por exemplo, Vercel/Netlify).
+
+
+## Atualização visual — Future Industrial (2026)
+
+O site foi atualizado com Hero fotográfico, containers de serviços em composição editorial, novas seções de acabamento e processo, CTAs com estados refinados e copy mais específica. Fotografias ilustrativas são vinculadas ao site oficial da Car Club e **não representam portfólio comprovado**. Confirme a autorização para reutilização e substitua por imagens próprias para uso comercial definitivo.
+
+Imagens em uso (referência oficial):
+- Polimento em execução: https://d4polyhz8pjtz.cloudfront.net/6269/quero-saber-mais-20240716155658_400.png
+- Acabamento manual: https://d4polyhz8pjtz.cloudfront.net/6269/quero-saber-mais-20240716155734_400.png
+- Colisão (problema inicial, nunca resultado): https://d4polyhz8pjtz.cloudfront.net/6269/quero-saber-mais-20240716155626_400.png

@@ -10,11 +10,11 @@ export const LINKS = {
  directions:'https://www.google.com/maps/dir/?api=1&destination=Rua+Jos%C3%A9+Carlos+Andrade+205+Tr%C3%AAs+Pontas+MG',
  mapEmbed:'https://www.google.com/maps?q=Rua+Jos%C3%A9+Carlos+Andrade+205+Tr%C3%AAs+Pontas+MG&output=embed'
 };
-export type Service = {id:string;title:string;description:string;detail:string;image?:string};
+export type Service = {id:string;title:string;description:string;detail:string;image?:string;imageAlt?:string};
 export const SERVICES:Service[] = [
- {id:'funilaria',title:'Funilaria e reparos de colisão',description:'Avaliação e reparos para recuperar a carroceria com atenção à precisão e ao acabamento.',detail:'Realizamos avaliação de necessidades de funilaria, desde pequenos danos até reparos relacionados a colisões.'},
- {id:'pintura',title:'Pintura automotiva',description:'Cuidado em cada etapa para valorizar a aparência e o acabamento do seu veículo.',detail:'Serviços de pintura automotiva, incluindo renovação de cor e acabamentos conforme avaliação do veículo.'},
- {id:'estetica',title:'Polimento e estética automotiva',description:'Detalhes que fazem diferença na apresentação e na conservação visual do carro.',detail:'Serviços de polimento e cuidados com a estética, orientados à necessidade específica de cada veículo.'},
+ {id:'funilaria',title:'Funilaria e reparos de colisão',description:'Avaliação e reparos para recuperar a carroceria com atenção à precisão e ao acabamento.',detail:'Realizamos avaliação de necessidades de funilaria, desde pequenos danos até reparos relacionados a colisões.',image:'https://d4polyhz8pjtz.cloudfront.net/6269/quero-saber-mais-20240716155626_400.png',imageAlt:'Imagem ilustrativa de dois veículos após uma colisão'},
+ {id:'pintura',title:'Pintura automotiva',description:'Cuidado em cada etapa para valorizar a aparência e o acabamento do seu veículo.',detail:'Serviços de pintura automotiva, incluindo renovação de cor e acabamentos conforme avaliação do veículo.',image:'https://d4polyhz8pjtz.cloudfront.net/6269/quero-saber-mais-20240716155734_400.png',imageAlt:'Detalhe ilustrativo de cuidado manual com a superfície de um carro'},
+ {id:'estetica',title:'Polimento e estética automotiva',description:'Detalhes que fazem diferença na apresentação e na conservação visual do carro.',detail:'Serviços de polimento e cuidados com a estética, orientados à necessidade específica de cada veículo.',image:'https://d4polyhz8pjtz.cloudfront.net/6269/quero-saber-mais-20240716155658_400.png',imageAlt:'Imagem ilustrativa de polimento em um veículo escuro'},
  {id:'seguradoras',title:'Reparos envolvendo seguradoras',description:'Orientação e atendimento para demandas de reparos relacionados a seguradoras.',detail:'Converse com nossa equipe para verificar as possibilidades de atendimento relacionadas à sua seguradora.'}
 ];
 export const FAQ = [
