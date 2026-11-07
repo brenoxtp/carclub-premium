@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ command }) => ({
-  // GitHub Pages publishes project websites under /<repository-name>/.
-  base: command === 'build' ? '/carclub-premium/' : '/',
+  // Relative assets work on GitHub Pages and in the browser preview.
+  base: command === 'build' ? './' : '/',
   plugins: [react()],
 }));

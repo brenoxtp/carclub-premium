@@ -1,4 +1,4 @@
-name: Build e publicar Car Club Premium
+name: Build, prévia e publicação Car Club Premium
 
 on:
   push:
@@ -6,12 +6,12 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
-  group: carclub-pages
+  group: carclub-publish
   cancel-in-progress: true
 
 jobs:
@@ -30,15 +30,30 @@ jobs:
         run: npm run check
       - name: Gerar site
         run: npm run build
-        env:
-          VITE_BASE_PATH: /carclub-premium/
-      - name: Salvar arquivos
+      - name: Atualizar prévia pública no repositório
+        run: |
+          mkdir -p preview
+          rm -rf preview/assets
+          cp -R dist/. preview/
+          cp privacidade.html preview/privacidade.html
+          touch preview/.nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A preview
+          if git diff --cached --quiet; then
+            echo "Prévia sem alterações."
+          else
+            git commit -m "chore: update browser preview [skip ci]"
+            git push origin HEAD:main
+          fi
+      - name: Arquivar arquivos do site
         uses: actions/upload-artifact@v4
         with:
           name: carclub-site
           path: dist/
 
   deploy:
+    if: github.event.repository.has_pages == true
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -53,7 +68,7 @@ jobs:
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
       - name: Enviar site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: dist/
       - name: Publicar
