@@ -1,17 +1,14 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronDown, Instagram, MapPin, Menu, Phone, Plus, Send, ShieldCheck, X } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, ChevronDown, Instagram, MapPin, Menu, Phone, Plus, Send, ShieldCheck, X } from 'lucide-react';
 import { BRAND, SERVICES, FAQ, LINKS, type Service } from './siteContent';
 
-const A = motion.a;
 const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 const whatsapp = (message = 'Olá! Gostaria de solicitar um orçamento na Car Club.') => `https://wa.me/${BRAND.whatsappDigits}?text=${encodeURIComponent(message)}`;
-const imgAlt = 'Imagem ilustrativa do serviço, não representa trabalho realizado pela Car Club';
 
 function Brand({ light = true }: { light?: boolean }) {
   return <a className={`brand ${light ? 'brand-light' : 'brand-dark'}`} href="#inicio" aria-label="Car Club, voltar ao início">
-    <span className="brand-emblem">C<span>C</span><i>.</i></span>
-    <span className="brand-label"><strong>CAR CLUB</strong><small>CENTRO AUTOMOTIVO</small></span>
+    <img className="brand-logo" src="https://d4polyhz8pjtz.cloudfront.net/6269/cor1logo21-20240722130726.png" alt="Car Club" />
   </a>;
 }
 function SectionLabel({ children, dark = false }: { children: React.ReactNode, dark?: boolean }) {
